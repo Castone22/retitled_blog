@@ -1,5 +1,6 @@
 package com.manifestcorp.retitledengine
 
+import grails.plugin.springsecurity.SpringSecurityService
 import grails.plugin.springsecurity.annotation.Secured
 
 import static org.springframework.http.HttpStatus.*
@@ -8,6 +9,8 @@ import grails.transaction.Transactional
 @Secured(['permitAll'])
 @Transactional(readOnly = true)
 class PostController {
+
+    def springSecurityService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -20,16 +23,20 @@ class PostController {
         respond postInstance
     }
 
+    @Secured(['ROLE_ADMIN'])
     def create() {
         respond new Post(params)
     }
 
     @Transactional
     def save(Post postInstance) {
+        def user = springSecurityService.getCurrentUser()
         if (postInstance == null) {
             notFound()
             return
         }
+
+        postInstance.user = user
 
         if (postInstance.hasErrors()) {
             respond postInstance.errors, view:'create'

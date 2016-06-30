@@ -13,6 +13,10 @@ class PostControllerSpec extends Specification {
         assert params != null
         // TODO: Populate valid properties like...
         //params["name"] = 'someValidName'
+        params.title = 'Testing the test'
+        params.author = 'Test'
+        params.content = 'Situation normal'
+        params.dateCreated = new Date();
     }
 
     void "Test the index action returns the correct model"() {

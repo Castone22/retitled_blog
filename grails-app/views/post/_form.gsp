@@ -11,14 +11,6 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: postInstance, field: 'author', 'error')} required">
-	<label for="author">
-		<g:message code="post.author.label" default="Author" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="author" required="" value="${postInstance?.author}"/>
-
-</div>
 
 <div class="fieldcontain ${hasErrors(bean: postInstance, field: 'title', 'error')} required">
 	<label for="title">

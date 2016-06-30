@@ -18,7 +18,20 @@
 		<g:layoutHead/>
 	</head>
 	<body class = "container">
-		<div id="retitledLogo" role="banner"><asset:image src="retitled.png" alt="Retitled Blog"/></></div>
+        <div class="row">
+            <div id="retitledLogo" role="banner" class="col-md-3 img-responsive"><asset:image src="retitled.png" alt="Retitled Blog"/></div>
+            <div class="col-md-6"></div>
+            <div id="searchGroup" class = "col-md-3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
 		<g:layoutBody/>
 
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>

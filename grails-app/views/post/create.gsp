@@ -35,4 +35,9 @@
 			</g:form>
 		</div>
 	</body>
+	<footer>
+		<script>
+
+		</script>
+	</footer>
 </html>

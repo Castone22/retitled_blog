@@ -20,12 +20,14 @@ h1, h2, h3, h4, h5, h6 {
 /* BASE LAYOUT */
 
 html {
-	background-color: #ddd;
+	/*
 	background-image: -moz-linear-gradient(center top, #aaa, #ddd);
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aaa), color-stop(1, #ddd));
 	background-image: linear-gradient(top, #aaa, #ddd);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#aaaaaa', EndColorStr = '#dddddd');
-	background-repeat: no-repeat;
+	*/
+
+	background: #ddd url(../images/background.jpg) no-repeat fixed center;
 	height: 100%;
 	/* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
 	-webkit-box-sizing: border-box;
@@ -113,7 +115,8 @@ img {
 
 #retitledLogo {
 	display: inline-block;
-	margin: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 .content {
@@ -179,7 +182,6 @@ img {
 
 .nav li {
 	display: block;
-	float: left;
 	list-style-type: none;
 	margin-right: 0.5em;
 	padding: 0;
@@ -189,6 +191,7 @@ img {
 	color: #666666;
 	display: block;
 	padding: 0.25em 0.7em;
+    padding-bottom: .9em;
 	text-decoration: none;
 	   -moz-border-radius: 0.3em;
 	-webkit-border-radius: 0.3em;
@@ -229,6 +232,15 @@ img {
 .nav a.create {
 	background-image: url(../images/skin/database_add.png);
 }
+
+.left-align {
+    float: left;
+}
+
+.right-align {
+	float: right;
+}
+
 
 /* CREATE/EDIT FORMS AND SHOW PAGES */
 
@@ -628,4 +640,13 @@ a.skip {
 a.skip:focus, a.skip:active {
 	position: relative;
 	left: 0px;
+}
+
+#searchGroup{
+    vertical-align: bottom;
+}
+
+#commentSubmit{
+	height: 100%;
+	padding: 0 1em;
 }
